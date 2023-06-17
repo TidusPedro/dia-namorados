@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz dia dos Namorados</title>
+
+    <style>
+        body{
+    background-color: #a020f0;
+}
+
+.painel{
+    margin: auto;
+    background-color: bisque;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 50px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#sim{
+   height: 40px;
+   width: 60px;
+   background-color: #a020f0;
+   border: 2px solid white;
+   border-radius: 10px;
+   color: white;
+   margin-left: -50px;
+}
+
+#nao{
+    position: absolute;
+    height: 40px;
+    width: 60px;
+    background-color: #a020f0;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    margin-left: 10px;
+}
+    </style>
+</head>
+<body>
+
+    <div class="painel">
+        <h1>Feliz dia dos Namorados</h1>
+        <img src="gatofofo.jpg" alt="gatofofo">
+        <h2>Aceita namorar comigo?</h2>
+
+        <button id="sim" onclick="parabens()">Sim</button>
+        <button onmouseout="fuja()" id="nao">Não</button>
+
+
+    </div>
+
+    <script>
+        function fuja(){
+            var botaonao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaonao.offsetWidth;
+            var maxY = alturaJanela - botaonao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaonao.style.left = aleatorioX + "px";
+            botaonao.style.top = aleatorioY +"px";
+        }
+
+        function parabens(){
+            alert("Parabens, fez uma boa escolha<3 ")
+        }
+    </script>
+    
+</body>
+</html>
